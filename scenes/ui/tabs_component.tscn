@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://blcecdnsv7jmw"]
+
+[ext_resource type="PackedScene" uid="uid://dqdv2s6xhb6v3" path="res://scenes/ui/tab_button_component.tscn" id="1_glxg3"]
+[ext_resource type="Texture2D" uid="uid://c58gw05dc4ngt" path="res://assets/gui/textures/sidemenu/c_sidemenu_background.png" id="1_voyhs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m4ktu"]
+texture = ExtResource("1_voyhs")
+expand_margin_right = 95.0
+
+[node name="TabsContainer" type="TabsUIComponent" node_paths=PackedStringArray("tabs_holder", "tabs_content_holder", "footer_holder")]
+tabs_holder = NodePath("SplitContainer/HSplitContainer/TabsBoxContainer/PanelContainer/CategoriesHolder")
+tabs_content_holder = NodePath("SplitContainer/HSplitContainer/ContentHSplitContainer/SplitContainer/TabsContainer")
+footer_holder = NodePath("SplitContainer/HSplitContainer/ContentHSplitContainer/SplitContainer/FooterContainer")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SplitContainer" type="SplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="SplitContainer"]
+layout_mode = 2
+dragger_visibility = 1
+
+[node name="TabsBoxContainer" type="BoxContainer" parent="SplitContainer/HSplitContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="SplitContainer/HSplitContainer/TabsBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_m4ktu")
+
+[node name="CategoriesHolder" type="VBoxContainer" parent="SplitContainer/HSplitContainer/TabsBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="TabButton" parent="SplitContainer/HSplitContainer/TabsBoxContainer/PanelContainer/CategoriesHolder" instance=ExtResource("1_glxg3")]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="SplitContainer/HSplitContainer/TabsBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ContentHSplitContainer" type="HSplitContainer" parent="SplitContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="SplitContainer" type="SplitContainer" parent="SplitContainer/HSplitContainer/ContentHSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+dragging_enabled = false
+vertical = true
+
+[node name="TabsContainer" type="VSplitContainer" parent="SplitContainer/HSplitContainer/ContentHSplitContainer/SplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+dragging_enabled = false
+
+[node name="FooterContainer" type="VSplitContainer" parent="SplitContainer/HSplitContainer/ContentHSplitContainer/SplitContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+dragging_enabled = false

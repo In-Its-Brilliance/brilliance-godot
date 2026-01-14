@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc00ydlsjrmtu"]
+
+[sub_resource type="Resource" id="Resource_kyoqx"]
+metadata/__load_path__ = "res://assets/gui/textures/button/Button_RL_Border.png"
+
+[sub_resource type="Resource" id="Resource_0h047"]
+metadata/__load_path__ = "res://assets/gui/textures/button/Button_RL_Border.png"
+
+[sub_resource type="Resource" id="Resource_45jhl"]
+metadata/__load_path__ = "res://assets/gui/textures/button/Button_RL_Background.png"
+
+[sub_resource type="Resource" id="Resource_04bhl"]
+metadata/__load_path__ = "res://assets/gui/textures/button/Button_RL_Background_hover.png"
+
+[node name="ButtonNode" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -24.0
+offset_right = 141.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="OutlineLeft" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 44.4
+grow_vertical = 2
+texture = SubResource("Resource_kyoqx")
+expand_mode = 1
+
+[node name="OutlineRight" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -44.4
+offset_right = -3.05176e-05
+grow_horizontal = 0
+grow_vertical = 2
+texture = SubResource("Resource_0h047")
+expand_mode = 1
+flip_h = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 0
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer"]
+layout_mode = 2
+texture_normal = SubResource("Resource_45jhl")
+texture_hover = SubResource("Resource_04bhl")
+ignore_texture_size = true
+stretch_mode = 0

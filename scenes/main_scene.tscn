@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5l1r11gi0tet"]
+
+[ext_resource type="PackedScene" uid="uid://ha34myf86so5" path="res://scenes/text_screen.tscn" id="2_773ro"]
+[ext_resource type="PackedScene" uid="uid://dubrdqpgortj7" path="res://scenes/debug_info.tscn" id="3_qwjw3"]
+[ext_resource type="Material" uid="uid://8t3qd3k1d8od" path="res://assets/terrain_material.tres" id="5_tt6yv"]
+
+[sub_resource type="Sky" id="Sky_7db6b"]
+
+[sub_resource type="Environment" id="Environment_8w0cv"]
+background_mode = 1
+background_color = Color(0.484863, 0.694348, 0.996564, 1)
+sky = SubResource("Sky_7db6b")
+ambient_light_source = 2
+ambient_light_color = Color(0.556953, 0.556953, 0.556953, 1)
+reflected_light_source = 1
+ssao_enabled = true
+sdfgi_min_cell_size = 0.01
+volumetric_fog_sky_affect = 0.0
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_cqqg4"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7ykc4"]
+size = Vector2(400, 400)
+
+[node name="MainScene" type="MainScene" node_paths=PackedStringArray("worlds_manager", "worlde_environment")]
+worlds_manager = NodePath("WorldsManager")
+text_screen_scene = ExtResource("2_773ro")
+debug_info_scene = ExtResource("3_qwjw3")
+debug_render_distance = 14
+debug_world_settings = "res://assets/world_settings.yml"
+worlde_environment = NodePath("WorldEnvironment")
+
+[node name="WorldsManager" type="WorldsManager" parent="."]
+terrain_material = ExtResource("5_tt6yv")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8w0cv")
+camera_attributes = SubResource("CameraAttributesPractical_cqqg4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.513062, 0.858352, 0, -0.858352, 0.513062, 0, 22.9767, 0)
+light_bake_mode = 0
+directional_shadow_mode = 0
+sky_mode = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.25
+anchor_top = 0.88
+anchor_right = 0.75
+anchor_bottom = 0.98
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 67.884, 17.3874)
+visible = false
+mesh = SubResource("PlaneMesh_7ykc4")
+surface_material_override/0 = ExtResource("5_tt6yv")
