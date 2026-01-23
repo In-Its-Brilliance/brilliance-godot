@@ -29,21 +29,22 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("2_g2hw7")
-theme_override_fonts/mono_font = ExtResource("2_g2hw7")
-theme_override_fonts/italics_font = ExtResource("4_s54r6")
-theme_override_fonts/bold_italics_font = ExtResource("5_6nsia")
 theme_override_fonts/bold_font = ExtResource("3_l8kb8")
+theme_override_fonts/bold_italics_font = ExtResource("5_6nsia")
+theme_override_fonts/italics_font = ExtResource("4_s54r6")
+theme_override_fonts/mono_font = ExtResource("2_g2hw7")
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
 theme_override_font_sizes/bold_italics_font_size = 12
 theme_override_font_sizes/italics_font_size = 12
 theme_override_font_sizes/mono_font_size = 12
-theme_override_font_sizes/normal_font_size = 12
-theme_override_font_sizes/bold_font_size = 12
 bbcode_enabled = true
-text = "test 123
-123
-213
-teasdas
-"
+text = "[b]FPS: [color=#66B366]{:.0}[/color][/b]
+[b]Currently rendering:[/b]
+[color=#B3B3B3]Objects:[/color] {}
+[color=#B3B3B3]Primitive indices:[/color] {:.1} K
+[color=#B3B3B3]Draw calls:[/color] {}
+[color=#B3B3B3]Video mem used:[/color] {:.1} MB"
 fit_content = true
 scroll_active = false
 tab_size = 0

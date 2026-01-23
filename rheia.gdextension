@@ -4,8 +4,8 @@ compatibility_minimum = 4.1
 reloadable = false
 
 [libraries]
-linux.debug.x86_64 = "res://../target/debug/librheia_client.so"
-linux.release.x86_64 = "res://../target/release/librheia_client.so"
+linux.debug.x86_64 = "res://../brilliance_debug.so"
+linux.release.x86_64 = "res://../brilliance.so"
 
-windows.debug.x86_64 = "res://../target/debug/rheia_client.dll"
-windows.release.x86_64 = "res://../target/x86_64-pc-windows-gnu/release/rheia_client.dll"
+windows.debug.x86_64 = "res://../brilliance_debug.dll"
+windows.release.x86_64 = "res://../brilliance.dll"
