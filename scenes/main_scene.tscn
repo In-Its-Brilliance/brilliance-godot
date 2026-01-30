@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5l1r11gi0tet"]
+[gd_scene format=3 uid="uid://c5l1r11gi0tet"]
 
 [ext_resource type="PackedScene" uid="uid://ha34myf86so5" path="res://scenes/text_screen.tscn" id="2_773ro"]
 [ext_resource type="PackedScene" uid="uid://dubrdqpgortj7" path="res://scenes/debug_info.tscn" id="3_qwjw3"]
@@ -23,36 +23,36 @@ volumetric_fog_sky_affect = 0.0
 [sub_resource type="PlaneMesh" id="PlaneMesh_7ykc4"]
 size = Vector2(400, 400)
 
-[node name="MainScene" type="MainScene" node_paths=PackedStringArray("worlds_manager", "worlde_environment")]
+[node name="MainScene" type="MainScene" unique_id=1042616537 node_paths=PackedStringArray("worlds_manager", "world_environment")]
 worlds_manager = NodePath("WorldsManager")
 text_screen_scene = ExtResource("2_773ro")
 debug_info_scene = ExtResource("3_qwjw3")
 debug_render_distance = 14
 debug_world_settings = "res://assets/world_settings.yml"
-worlde_environment = NodePath("WorldEnvironment")
+world_environment = NodePath("WorldEnvironment")
 
-[node name="WorldsManager" type="WorldsManager" parent="."]
+[node name="WorldsManager" type="WorldsManager" parent="." unique_id=1088629680]
 terrain_material = ExtResource("5_tt6yv")
 terrain_material_transparent = ExtResource("4_pu3yx")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=844284381]
 environment = SubResource("Environment_8w0cv")
 camera_attributes = SubResource("CameraAttributesPractical_cqqg4")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2040596846]
 transform = Transform3D(1, 0, 0, 0, 0.513062, 0.858352, 0, -0.858352, 0.513062, 0, 22.9767, 0)
 light_bake_mode = 0
 directional_shadow_mode = 0
 sky_mode = 1
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1777148882]
 layout_mode = 3
 anchor_left = 0.25
 anchor_top = 0.88
 anchor_right = 0.75
 anchor_bottom = 0.98
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=837092910]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 67.884, 17.3874)
 visible = false
 mesh = SubResource("PlaneMesh_7ykc4")

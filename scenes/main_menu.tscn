@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cihth3ka1wf05"]
+[gd_scene format=3 uid="uid://cihth3ka1wf05"]
 
 [ext_resource type="PackedScene" uid="uid://ha34myf86so5" path="res://scenes/text_screen.tscn" id="1_bl486"]
 [ext_resource type="Texture2D" uid="uid://dl0enn5gojofm" path="res://assets/godot_logo.png" id="2_x5xk6"]
@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://br4msw8gckd6n" path="res://assets/gui/fonts/Monocraft/Monocraft.ttf" id="4_munq4"]
 [ext_resource type="Texture2D" uid="uid://cceb816pbun8a" path="res://assets/gui/textures/menu_background.png" id="5_ctpdy"]
 
-[node name="MainMenu" type="MainMenu" node_paths=PackedStringArray("gui", "buttons_holder", "bottom_text")]
+[node name="MainMenu" type="MainMenu" unique_id=1716142060 node_paths=PackedStringArray("gui", "buttons_holder", "bottom_text")]
 gui = NodePath("GUI")
 buttons_holder = NodePath("GUI/VBoxContainer/BottomHalf/ButtonsHolder")
 bottom_text = NodePath("GUI/VBoxContainer/BottomHalf/MarginContainer/BottomText")
@@ -20,7 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GUI" type="Control" parent="."]
+[node name="GUI" type="Control" parent="." unique_id=748358819]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,7 +30,7 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="GUI"]
+[node name="TextureRect" type="TextureRect" parent="GUI" unique_id=1868602112]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,7 +40,7 @@ grow_vertical = 2
 texture = ExtResource("5_ctpdy")
 expand_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GUI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI" unique_id=570848760]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,11 +48,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TopHalf" type="Control" parent="GUI/VBoxContainer"]
+[node name="TopHalf" type="Control" parent="GUI/VBoxContainer" unique_id=1555252629]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="GUI/VBoxContainer/TopHalf"]
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/VBoxContainer/TopHalf" unique_id=2051048123]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 1
 anchors_preset = 14
@@ -62,7 +62,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Logo" type="TextureRect" parent="GUI/VBoxContainer/TopHalf/HBoxContainer"]
+[node name="Logo" type="TextureRect" parent="GUI/VBoxContainer/TopHalf/HBoxContainer" unique_id=1204242200]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -70,11 +70,11 @@ texture = ExtResource("2_x5xk6")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="BottomHalf" type="Control" parent="GUI/VBoxContainer"]
+[node name="BottomHalf" type="Control" parent="GUI/VBoxContainer" unique_id=829379088]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ButtonsHolder" type="VBoxContainer" parent="GUI/VBoxContainer/BottomHalf"]
+[node name="ButtonsHolder" type="VBoxContainer" parent="GUI/VBoxContainer/BottomHalf" unique_id=950891592]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -85,10 +85,10 @@ offset_right = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MenuButton" parent="GUI/VBoxContainer/BottomHalf/ButtonsHolder" instance=ExtResource("3_frrkb")]
+[node name="MenuButton" parent="GUI/VBoxContainer/BottomHalf/ButtonsHolder" unique_id=2075470277 instance=ExtResource("3_frrkb")]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="GUI/VBoxContainer/BottomHalf"]
+[node name="MarginContainer" type="MarginContainer" parent="GUI/VBoxContainer/BottomHalf" unique_id=957677643]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -100,7 +100,7 @@ grow_vertical = 0
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_bottom = 10
 
-[node name="BottomText" type="RichTextLabel" parent="GUI/VBoxContainer/BottomHalf/MarginContainer"]
+[node name="BottomText" type="RichTextLabel" parent="GUI/VBoxContainer/BottomHalf/MarginContainer" unique_id=1845175267]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_fonts/normal_font = ExtResource("4_munq4")

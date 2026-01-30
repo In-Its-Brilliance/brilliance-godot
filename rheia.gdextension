@@ -4,8 +4,8 @@ compatibility_minimum = 4.1
 reloadable = false
 
 [libraries]
-linux.debug.x86_64 = "res://../brilliance_debug.so"
-linux.release.x86_64 = "res://../brilliance.so"
+linux.debug.x86_64 = "res://../In-Its-Brilliance-Debug.so"
+linux.release.x86_64 = "res://../In-Its-Brilliance.so"
 
-windows.debug.x86_64 = "res://../brilliance_debug.dll"
-windows.release.x86_64 = "res://../brilliance.dll"
+windows.debug.x86_64 = "res://../In-Its-Brilliance-Debug.dll"
+windows.release.x86_64 = "res://../In-Its-Brilliance.dll"
