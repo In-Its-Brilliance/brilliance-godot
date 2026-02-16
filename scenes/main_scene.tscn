@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ha34myf86so5" path="res://scenes/text_screen.tscn" id="2_773ro"]
 [ext_resource type="PackedScene" uid="uid://dubrdqpgortj7" path="res://scenes/debug_info.tscn" id="3_qwjw3"]
 [ext_resource type="Material" uid="uid://s5j88fv7crb6" path="res://assets/terrain_material_transparent.tres" id="4_pu3yx"]
+[ext_resource type="Material" uid="uid://danm33cswy2s0" path="res://assets/shader_material_water.tres" id="5_gubc5"]
 [ext_resource type="Material" uid="uid://8t3qd3k1d8od" path="res://assets/terrain_material.tres" id="5_tt6yv"]
 
 [sub_resource type="Sky" id="Sky_7db6b"]
@@ -34,6 +35,7 @@ world_environment = NodePath("WorldEnvironment")
 [node name="WorldsManager" type="WorldsManager" parent="." unique_id=1088629680]
 terrain_material = ExtResource("5_tt6yv")
 terrain_material_transparent = ExtResource("4_pu3yx")
+terrain_material_water = ExtResource("5_gubc5")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=844284381]
 environment = SubResource("Environment_8w0cv")

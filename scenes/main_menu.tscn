@@ -5,7 +5,30 @@
 [ext_resource type="PackedScene" uid="uid://bpi7q8ph1tlrj" path="res://scenes/connect_screen.tscn" id="3_8ft6b"]
 [ext_resource type="PackedScene" uid="uid://0jv33c5spadv" path="res://scenes/components/menu_button.tscn" id="3_frrkb"]
 [ext_resource type="FontFile" uid="uid://br4msw8gckd6n" path="res://assets/gui/fonts/Monocraft/Monocraft.ttf" id="4_munq4"]
-[ext_resource type="Texture2D" uid="uid://cceb816pbun8a" path="res://assets/gui/textures/menu_background.png" id="5_ctpdy"]
+[ext_resource type="Texture2D" uid="uid://dx4p02igb13qp" path="res://assets/gui/textures/clouds/clouds_1.png" id="4_oa1go"]
+[ext_resource type="Texture2D" uid="uid://bkyyw8mmttbk4" path="res://assets/gui/textures/clouds/clouds_3.png" id="4_tbmy8"]
+[ext_resource type="Shader" uid="uid://bxaryieudtg2m" path="res://assets/shaders/vignette_dithered.gdshader" id="5_jk1qb"]
+[ext_resource type="Script" uid="uid://do0y7lddgk3jv" path="res://assets/main_menu_texture.gd" id="5_rcqid"]
+[ext_resource type="Texture2D" uid="uid://btl0mqj75jokp" path="res://assets/gui/textures/clouds/clouds_4.png" id="7_1ajci"]
+[ext_resource type="Texture2D" uid="uid://dfc1o5jhdgeil" path="res://assets/gui/textures/clouds/clouds_5.png" id="8_7b55j"]
+[ext_resource type="Texture2D" uid="uid://dwga8xj3qoetc" path="res://assets/gui/textures/clouds/clouds_7.png" id="9_5pajh"]
+[ext_resource type="Texture2D" uid="uid://nnxrvu7jvrff" path="res://assets/gui/textures/clouds/clouds_8.png" id="10_j7ex8"]
+[ext_resource type="Texture2D" uid="uid://dbw5nq83wkvmv" path="res://assets/gui/textures/clouds/clouds_2_1.png" id="11_a8gd2"]
+[ext_resource type="Shader" uid="uid://bvhm58v13djdv" path="res://assets/shaders/outline.gdshader" id="12_1ajci"]
+[ext_resource type="Texture2D" uid="uid://dh20ldi8b01wv" path="res://assets/gui/textures/clouds/clouds_2_2.png" id="12_hstxw"]
+[ext_resource type="Texture2D" uid="uid://bosm0rmkhdc2n" path="res://assets/gui/textures/clouds/clouds_2_3.png" id="13_8egab"]
+[ext_resource type="Texture2D" uid="uid://db1elpoixgqnm" path="res://assets/gui/textures/clouds/clouds_2_4.png" id="14_gw5y6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5dd4i"]
+shader = ExtResource("5_jk1qb")
+shader_parameter/darken_amount = 0.6
+shader_parameter/vignette_strength = 1.30000006175
+shader_parameter/vignette_start = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7b55j"]
+shader = ExtResource("12_1ajci")
+shader_parameter/outline_color = Color(0, 0, 0, 0.7)
+shader_parameter/outline_width = 2.0
 
 [node name="MainMenu" type="MainMenu" unique_id=1716142060 node_paths=PackedStringArray("gui", "buttons_holder", "bottom_text")]
 gui = NodePath("GUI")
@@ -30,15 +53,27 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="GUI" unique_id=1868602112]
+[node name="TextureRect2" type="TextureRect" parent="GUI" unique_id=1413486741]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_ctpdy")
-expand_mode = 3
+texture = ExtResource("8_7b55j")
+stretch_mode = 6
+script = ExtResource("5_rcqid")
+textures = Array[Texture2D]([ExtResource("4_oa1go"), ExtResource("4_tbmy8"), ExtResource("7_1ajci"), ExtResource("8_7b55j"), ExtResource("9_5pajh"), ExtResource("10_j7ex8"), ExtResource("11_a8gd2"), ExtResource("12_hstxw"), ExtResource("13_8egab"), ExtResource("14_gw5y6")])
+
+[node name="ColorRect2" type="ColorRect" parent="GUI" unique_id=276654641]
+material = SubResource("ShaderMaterial_5dd4i")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18039216, 0.14901961, 0.11372549, 0.5568628)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GUI" unique_id=570848760]
 layout_mode = 1
@@ -63,6 +98,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Logo" type="TextureRect" parent="GUI/VBoxContainer/TopHalf/HBoxContainer" unique_id=1204242200]
+material = SubResource("ShaderMaterial_7b55j")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

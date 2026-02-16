@@ -1,13 +1,20 @@
 [gd_scene format=3 uid="uid://bpi7q8ph1tlrj"]
 
 [ext_resource type="Texture2D" uid="uid://dkbkvitoqrlay" path="res://assets/gui/textures/background.png" id="1_17i6a"]
+[ext_resource type="Shader" uid="uid://dfkreg77uifyg" path="res://assets/shaders/blure.gdshader" id="1_18n4c"]
 [ext_resource type="Shader" uid="uid://bxaryieudtg2m" path="res://assets/shaders/vignette_dithered.gdshader" id="2_q4a8r"]
 [ext_resource type="Theme" uid="uid://b02sh2g6s5sq0" path="res://assets/gui/default_theme.tres" id="2_sh6k3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_18n4c"]
 shader = ExtResource("2_q4a8r")
-shader_parameter/darken_amount = 1.0
-shader_parameter/vignette_strength = 1.3
+shader_parameter/darken_amount = 0.6
+shader_parameter/vignette_strength = 1.5
+shader_parameter/vignette_start = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l2g4h"]
+shader = ExtResource("1_18n4c")
+shader_parameter/blur_amount = 2.000000095
+shader_parameter/darken = 0.0750000035625
 
 [node name="ConnectScreen" type="ConnectScreen" unique_id=2140214758 node_paths=PackedStringArray("error_text", "input", "username_input", "back_button", "connect_button")]
 error_text = NodePath("VBoxContainer/VBoxContainer/Error")
@@ -33,6 +40,16 @@ stretch_mode = 1
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=387532014]
 material = SubResource("ShaderMaterial_18n4c")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18039216, 0.14901961, 0.11372549, 0.5568628)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=698682615]
+material = SubResource("ShaderMaterial_l2g4h")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

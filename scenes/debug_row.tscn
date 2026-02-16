@@ -1,18 +1,23 @@
 [gd_scene format=3 uid="uid://bohec0klc40x2"]
 
-[ext_resource type="FontFile" uid="uid://clhrph24nx6vo" path="res://assets/gui/fonts/hack/Hack-Regular.ttf" id="2_g2hw7"]
-[ext_resource type="FontFile" uid="uid://dxly1nwoo0j78" path="res://assets/gui/fonts/hack/Hack-Bold.ttf" id="3_l8kb8"]
-[ext_resource type="FontFile" uid="uid://b4ff0cugvpgrk" path="res://assets/gui/fonts/hack/Hack-Italic.ttf" id="4_s54r6"]
-[ext_resource type="FontFile" uid="uid://kv6t6keof778" path="res://assets/gui/fonts/hack/Hack-BoldItalic.ttf" id="5_6nsia"]
+[ext_resource type="FontFile" uid="uid://vrwsx0k32eym" path="res://assets/gui/fonts/Monocraft/Monocraft.otf" id="1_mc55t"]
+[ext_resource type="FontFile" uid="uid://dex64ol46xo2a" path="res://assets/gui/fonts/Monocraft/Monocraft-Bold.otf" id="2_ga4p3"]
+[ext_resource type="FontFile" uid="uid://t0pxs7ig3xsp" path="res://assets/gui/fonts/Monocraft/Monocraft-Bold-Italic.otf" id="3_mkej4"]
+[ext_resource type="FontFile" uid="uid://dldpnw7khwbnk" path="res://assets/gui/fonts/Monocraft/Monocraft-Italic.otf" id="4_b7p2g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc55t"]
+bg_color = Color(0, 0, 0, 0.4509804)
 
 [node name="Row2" type="HBoxContainer" unique_id=2125983466]
 custom_minimum_size = Vector2(10, 10)
-size_flags_vertical = 3
+offset_right = 366.0
+offset_bottom = 84.0
 mouse_filter = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1620992461]
 layout_mode = 2
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mc55t")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1703554136]
 layout_mode = 2
@@ -23,16 +28,17 @@ theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer" unique_id=1707778842]
-custom_minimum_size = Vector2(350, 0)
+custom_minimum_size = Vector2(360, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("2_g2hw7")
-theme_override_fonts/bold_font = ExtResource("3_l8kb8")
-theme_override_fonts/bold_italics_font = ExtResource("5_6nsia")
-theme_override_fonts/italics_font = ExtResource("4_s54r6")
-theme_override_fonts/mono_font = ExtResource("2_g2hw7")
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("1_mc55t")
+theme_override_fonts/bold_font = ExtResource("2_ga4p3")
+theme_override_fonts/bold_italics_font = ExtResource("3_mkej4")
+theme_override_fonts/italics_font = ExtResource("4_b7p2g")
+theme_override_fonts/mono_font = ExtResource("1_mc55t")
 theme_override_font_sizes/normal_font_size = 12
 theme_override_font_sizes/bold_font_size = 12
 theme_override_font_sizes/bold_italics_font_size = 12

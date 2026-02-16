@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://dubrdqpgortj7"]
 
-[node name="DebugInfo" type="DebugInfo"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="PackedScene" uid="uid://bohec0klc40x2" path="res://scenes/debug_row.tscn" id="1_0e4su"]
+
+[node name="DebugInfo" type="DebugInfo" unique_id=1908370637]
+offset_right = 372.0
+offset_bottom = 96.0
 mouse_filter = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=40993672]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 3
@@ -16,7 +15,11 @@ theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1512620090]
 layout_mode = 2
 size_flags_vertical = 0
 mouse_filter = 2
+
+[node name="Row2" parent="MarginContainer/VBoxContainer" unique_id=2125983466 instance=ExtResource("1_0e4su")]
+visible = false
+layout_mode = 2
