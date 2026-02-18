@@ -14,7 +14,6 @@ image = SubResource("Image_77y5b")
 
 [resource]
 transparency = 1
-blend_mode = 4
 depth_draw_mode = 1
 albedo_texture = SubResource("ImageTexture_1xkqs")
 metallic_specular = 0.0

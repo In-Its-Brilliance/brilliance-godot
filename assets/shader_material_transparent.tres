@@ -1,6 +1,7 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://danm33cswy2s0"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bncw2ukvaxgqj"]
 
-[ext_resource type="Shader" uid="uid://cm0ins0cx3w2d" path="res://assets/shaders/water.gdshader" id="2_2ucd6"]
+[ext_resource type="Material" uid="uid://s5j88fv7crb6" path="res://assets/terrain_material_transparent.tres" id="1_ynbnt"]
+[ext_resource type="Shader" uid="uid://bj1eqn0d8bpca" path="res://assets/shaders/terrain.gdshader" id="2_k5nn3"]
 
 [sub_resource type="Image" id="Image_sfm4u"]
 data = {
@@ -15,16 +16,10 @@ data = {
 image = SubResource("Image_sfm4u")
 
 [resource]
-render_priority = 1
-shader = ExtResource("2_2ucd6")
-shader_parameter/shallow_color = Color(0.2, 0.5, 0.75, 0.35)
-shader_parameter/mid_color = Color(0.08, 0.3, 0.7, 0.7)
-shader_parameter/deep_color = Color(0, 0.1, 0.8, 1)
-shader_parameter/depth_distance = 30.0
-shader_parameter/depth_curve = 12.0
-shader_parameter/depth_offset = 0.1
+render_priority = 0
+next_pass = ExtResource("1_ynbnt")
+shader = ExtResource("2_k5nn3")
 shader_parameter/character_position = Vector3(7.5, 0, 7.5)
-shader_parameter/fade_distance = 295.0000140125
+shader_parameter/fade_distance = 295.0
 shader_parameter/fade_range = 16.0
 shader_parameter/texture_albedo = SubResource("ImageTexture_fvx7x")
-shader_parameter/texture_strength = 0.3
