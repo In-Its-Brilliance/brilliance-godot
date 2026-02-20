@@ -6,23 +6,24 @@
 [ext_resource type="Material" uid="uid://bncw2ukvaxgqj" path="res://assets/shader_material_transparent.tres" id="4_rt2n2"]
 [ext_resource type="Material" uid="uid://danm33cswy2s0" path="res://assets/shader_material_water.tres" id="5_gubc5"]
 [ext_resource type="Material" uid="uid://8t3qd3k1d8od" path="res://assets/terrain_material.tres" id="5_tt6yv"]
+[ext_resource type="Material" uid="uid://b8tkb2w5kplnu" path="res://assets/skyboxes/sky_material.tres" id="7_sky"]
 
 [sub_resource type="Sky" id="Sky_7db6b"]
+sky_material = ExtResource("7_sky")
 
 [sub_resource type="Environment" id="Environment_8w0cv"]
-background_mode = 1
-background_color = Color(0.484863, 0.694348, 0.996564, 1)
+background_mode = 2
 sky = SubResource("Sky_7db6b")
 ambient_light_source = 2
 ambient_light_color = Color(0.556953, 0.556953, 0.556953, 1)
 ambient_light_energy = 0.5
 reflected_light_source = 1
 ssao_enabled = true
+ssil_enabled = true
 sdfgi_min_cell_size = 0.01
-fog_sun_scatter = 0.3
-fog_density = 0.0001
 fog_sky_affect = 0.0
 volumetric_fog_sky_affect = 0.0
+adjustment_enabled = true
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_cqqg4"]
 
@@ -49,12 +50,13 @@ environment = SubResource("Environment_8w0cv")
 camera_attributes = SubResource("CameraAttributesPractical_cqqg4")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2040596846]
-transform = Transform3D(1, 0, 0, 0, 0.513062, 0.858352, 0, -0.858352, 0.513062, 0, 22.9767, 0)
+transform = Transform3D(0.71897596, -0.356596, -0.5965846, 0.6950347, 0.3688791, 0.6171343, 0, -0.8583517, 0.5130618, 0, 22.9767, 0)
 light_bake_mode = 0
 shadow_enabled = true
+shadow_bias = 0.2
+shadow_normal_bias = 0.0
 shadow_blur = 0.1
 directional_shadow_mode = 0
-sky_mode = 1
 
 [node name="Control" type="Control" parent="." unique_id=1777148882]
 layout_mode = 3
