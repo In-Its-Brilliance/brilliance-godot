@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="AnimationNodeStateMachine" path="res://assets/animation/character_state_machine.tres" id="1"]
+
+[node name="AnimationTree" type="AnimationTree"]
+tree_root = ExtResource("1")
+active = false

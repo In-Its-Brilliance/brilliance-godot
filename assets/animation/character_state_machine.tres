@@ -1,0 +1,72 @@
+[gd_resource type="AnimationNodeStateMachine" format=3 uid="uid://cfqjqu7r7m7kd"]
+
+[sub_resource type="AnimationNodeAnimation" id="anim_fall"]
+animation = &"fall"
+
+[sub_resource type="AnimationNodeAnimation" id="anim_idle"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="anim_jump"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeAnimation" id="anim_run"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="anim_walk"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="t_start_idle"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="t_idle_walk"]
+xfade_time = 0.2
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="t_idle_run"]
+xfade_time = 0.2
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="t_idle_jump"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="t_walk_idle"]
+xfade_time = 0.2
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="t_walk_run"]
+xfade_time = 0.2
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="t_walk_jump"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="t_run_idle"]
+xfade_time = 0.2
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="t_run_walk"]
+xfade_time = 0.2
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="t_run_jump"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="t_jump_fall"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="t_fall_idle"]
+xfade_time = 0.15
+advance_mode = 0
+
+[resource]
+states/fall/node = SubResource("anim_fall")
+states/fall/position = Vector2(300, 400)
+states/idle/node = SubResource("anim_idle")
+states/idle/position = Vector2(300, 200)
+states/jump/node = SubResource("anim_jump")
+states/jump/position = Vector2(300, 0)
+states/run/node = SubResource("anim_run")
+states/run/position = Vector2(700, 100)
+states/walk/node = SubResource("anim_walk")
+states/walk/position = Vector2(500, 100)
+transitions = ["Start", "idle", SubResource("t_start_idle"), "idle", "walk", SubResource("t_idle_walk"), "idle", "run", SubResource("t_idle_run"), "idle", "jump", SubResource("t_idle_jump"), "walk", "idle", SubResource("t_walk_idle"), "walk", "run", SubResource("t_walk_run"), "walk", "jump", SubResource("t_walk_jump"), "run", "idle", SubResource("t_run_idle"), "run", "walk", SubResource("t_run_walk"), "run", "jump", SubResource("t_run_jump"), "jump", "fall", SubResource("t_jump_fall"), "fall", "idle", SubResource("t_fall_idle")]

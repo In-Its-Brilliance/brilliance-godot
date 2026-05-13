@@ -1,1 +1,4 @@
 slug: default
+
+scripts:
+ - res://assets/resources/default/test.rhai

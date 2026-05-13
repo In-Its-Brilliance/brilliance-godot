@@ -2,8 +2,9 @@ shader_type spatial;
 render_mode depth_draw_opaque, cull_back;
 
 uniform vec3 character_position = vec3(7.5, 0.0, 7.5);
-uniform float fade_distance : hint_range(0.0, 2000.0) = 295.0;
-uniform float fade_range : hint_range(1.0, 500.0) = 64.0;
+uniform float fade_distance : hint_range(0.0, 2000.0) = 320.0;
+
+uniform float fade_range : hint_range(1.0, 500.0) = 8.0;
 uniform sampler2D texture_albedo : source_color, filter_nearest;
 
 varying vec3 world_vertex;

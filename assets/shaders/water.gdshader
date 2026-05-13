@@ -9,7 +9,7 @@ uniform float depth_curve : hint_range(0.1, 20.0) = 12.0;
 uniform float depth_offset : hint_range(0.0, 1.0) = 0.1;
 uniform vec3 character_position = vec3(7.5, 0.0, 7.5);
 uniform float fade_distance : hint_range(0.0, 2000.0) = 295.0;
-uniform float fade_range : hint_range(1.0, 500.0) = 16.0;
+uniform float fade_range : hint_range(1.0, 500.0) = 8.0;
 uniform sampler2D depth_texture : hint_depth_texture, filter_nearest;
 uniform sampler2D screen_texture : hint_screen_texture, filter_linear;
 uniform sampler2D texture_albedo : source_color, filter_nearest;
@@ -26,9 +26,11 @@ void fragment() {
     vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth_raw);
     vec4 view_pos = INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
     view_pos.xyz /= view_pos.w;
-    float scene_depth = -view_pos.z;
-    float water_depth = -VERTEX.z;
-    float depth_diff = max(scene_depth - water_depth - depth_offset, 0.0);
+
+    // Reconstruct world position of the scene behind the water
+    vec4 scene_world_pos = INV_VIEW_MATRIX * vec4(view_pos.xyz, 1.0);
+    // Use vertical depth (Y difference) instead of view-ray distance
+    float depth_diff = max(world_vertex.y - scene_world_pos.y - depth_offset, 0.0);
 
     float t = clamp(depth_diff / depth_distance, 0.0, 1.0);
     float depth_factor = 1.0 - exp(-depth_curve * t);

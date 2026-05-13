@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://bncw2ukvaxgqj" path="res://assets/shader_material_transparent.tres" id="4_rt2n2"]
 [ext_resource type="Material" uid="uid://danm33cswy2s0" path="res://assets/shader_material_water.tres" id="5_gubc5"]
 [ext_resource type="Material" uid="uid://8t3qd3k1d8od" path="res://assets/terrain_material.tres" id="5_tt6yv"]
+[ext_resource type="Material" uid="uid://b7eyr4blv58kj" path="res://assets/block_selector_material.tres" id="6_18nlu"]
 [ext_resource type="Material" uid="uid://b8tkb2w5kplnu" path="res://assets/skyboxes/sky_material.tres" id="7_sky"]
 
 [sub_resource type="Sky" id="Sky_7db6b"]
@@ -21,7 +22,16 @@ reflected_light_source = 1
 ssao_enabled = true
 ssil_enabled = true
 sdfgi_min_cell_size = 0.01
-fog_sky_affect = 0.0
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.75, 0.78, 0.85, 1)
+fog_sun_scatter = 0.3
+fog_density = 1.0
+fog_aerial_perspective = 0.85
+fog_sky_affect = 0.5
+fog_depth_curve = 0.88765556
+fog_depth_begin = 70.0
+fog_depth_end = 803.6
 volumetric_fog_sky_affect = 0.0
 adjustment_enabled = true
 
@@ -30,20 +40,21 @@ adjustment_enabled = true
 [sub_resource type="PlaneMesh" id="PlaneMesh_7ykc4"]
 size = Vector2(400, 400)
 
-[node name="MainScene" type="MainScene" unique_id=1042616537 node_paths=PackedStringArray("worlds_manager", "world_environment")]
+[node name="MainScene" type="MainScene" unique_id=1042616537 node_paths=PackedStringArray("worlds_manager", "world_environment", "directional_light")]
 worlds_manager = NodePath("WorldsManager")
 text_screen_scene = ExtResource("2_773ro")
 debug_info_scene = ExtResource("3_qwjw3")
 world_environment = NodePath("WorldEnvironment")
+directional_light = NodePath("DirectionalLight3D")
 
 [node name="WorldsManager" type="WorldsManager" parent="." unique_id=1088629680]
 terrain_material = ExtResource("3_gubc5")
 terrain_material_transparent = ExtResource("4_rt2n2")
 terrain_material_water = ExtResource("5_gubc5")
+selection_material = ExtResource("6_18nlu")
 
 [node name="DebugWorldGenerator" type="DebugWorldGenerator" parent="." unique_id=1390563106]
-debug_render_distance = 20
-debug_world_settings = "res://assets/world_settings.yml"
+render_distance = 14
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=844284381]
 environment = SubResource("Environment_8w0cv")
@@ -55,6 +66,7 @@ light_bake_mode = 0
 shadow_enabled = true
 shadow_bias = 0.2
 shadow_normal_bias = 0.0
+shadow_opacity = 0.5
 shadow_blur = 0.1
 directional_shadow_mode = 0
 

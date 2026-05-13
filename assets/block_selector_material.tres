@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b7eyr4blv58kj"]
+
+[ext_resource type="Shader" uid="uid://baytlu55gkxrx" path="res://assets/shaders/block_selector.gdshader" id="1_tdi02"]
+
+[resource]
+render_priority = 100
+shader = ExtResource("1_tdi02")
+shader_parameter/edge_width = 0.007
