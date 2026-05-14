@@ -1,5 +1,3 @@
-print("&6Test resource loaded!")
-
 Main.bind_key("open_item_menu", "tab")
 
 selected_item = nil
@@ -34,7 +32,6 @@ for _, category in ipairs(Main.blocks.categories()) do
         local icon = Main.blocks.icon(block.id)
         icon:set_hover_text(string.format(block_hover_template, tostring(block.id), tostring(block.slug), tostring(block.content)))
         icon:on("clicked", function(clicked_block_id)
-            print("&6icon clicked block_id=" .. tostring(clicked_block_id))
             selected_item = BlockDataInfo.new(block.id)
             local mesh = Main.blocks.mesh(block.id)
             mesh:set_preview_color({ r = 0, g = 1, b = 0 }, 0.5)
@@ -100,13 +97,10 @@ Main.register_event("player_action_event", function(event)
         end
     end
 
-    print("&6player_action_event action=" .. tostring(event.action_type) .. " hit=" .. hit_info .. " selected_item=" .. selected_item_info)
 end)
 
 Main.register_event("input_action_pressed_event", function(event)
-    print("&6input_action_pressed_event action=" .. tostring(event.action))
     if event.action == "open_item_menu" then
-        print("&6open_item_menu pressed")
         block_menu_window:toggle()
     elseif event.action == "rotate_left" then
         if selected_item ~= nil then
@@ -122,5 +116,11 @@ Main.register_event("input_action_pressed_event", function(event)
                 current_preview_mesh:set_face_rotation(selected_item.face)
             end
         end
+    elseif event.action == "cancel_selection" then
+        selected_item = nil
+        current_preview_mesh = nil
+        block_preview_anchor:clear_children()
+        block_preview_anchor:hide()
+        block_menu_window:hide()
     end
 end)
