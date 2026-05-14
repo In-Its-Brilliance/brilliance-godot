@@ -19,8 +19,8 @@ Main.register_event("player_action_event", function(event)
     print("&6player_action_event action=" .. tostring(event.action_type) .. " hit=" .. hit_info .. " selected_item=" .. selected_item_info)
 end)
 
-Main.register_event("button_pressed_event", function(event)
-    print("&6button_pressed_event action=" .. tostring(event.action))
+Main.register_event("input_action_pressed_event", function(event)
+    print("&6input_action_pressed_event action=" .. tostring(event.action))
     if event.action == "open_item_menu" then
         print("&6open_item_menu pressed")
     end
