@@ -81,22 +81,22 @@ Main.register_event("look_at_event", function(look_at)
 end)
 
 Main.register_event("player_action_event", function(event)
-    local hit_info = "nil"
     if event.hit ~= nil then
-        hit_info = "selected_block=" .. event.hit.selected_block.to_string()
-    end
-
-    local selected_item_info = "nil"
-    if selected_item ~= nil then
-        selected_item_info = "id=" .. tostring(selected_item.id)
-        if selected_item.face ~= nil then
-            selected_item_info = selected_item_info .. " face=" .. selected_item.face:to_string()
-            if current_preview_mesh ~= nil then
-                current_preview_mesh:set_face_rotation(selected_item.face)
+        if event.action_type == "main" then
+            if selected_item ~= nil then
+                local slug = "place_block"
+                Main.send_network_event(slug, {
+                    position = event.hit.place_block,
+                    new_block_info = selected_item,
+                })
             end
+        elseif event.action_type == "second" then
+            local slug = "delete_block"
+            Main.send_network_event(slug, {
+                position = event.hit.selected_block,
+            })
         end
     end
-
 end)
 
 Main.register_event("input_action_pressed_event", function(event)
