@@ -1,4 +1,4 @@
 slug: default
 
 scripts:
- - res://assets/resources/default/test.rhai
+ - res://assets/resources/default/test.lua
