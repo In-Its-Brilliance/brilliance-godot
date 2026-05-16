@@ -12,6 +12,7 @@ block_preview_anchor:set_rotation_degrees({ x = 0, y = 0, z = 0 })
 block_preview_anchor:set_scale({ x = 1, y = 1, z = 1 })
 
 local block_menu_window = Main.ui.window("Block selection", true)
+Main.ui.add_child(block_menu_window)
 local block_menu_tabs = Main.ui.tabs()
 block_menu_window:add_child(block_menu_tabs)
 

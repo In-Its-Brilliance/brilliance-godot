@@ -1,4 +1,4 @@
 slug: default
 
 scripts:
- - res://assets/resources/default/test.lua
+ - res://assets/resources/default/creative.lua
