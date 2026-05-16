@@ -1,4 +1,7 @@
-Main.bind_key("open_item_menu", "tab")
+Main.bind_key("open_item_menu", "i")
+Main.bind_key("rotate_left", "shift+r")
+Main.bind_key("rotate_right", "r")
+Main.bind_key("cancel_selection", "q")
 
 selected_item = nil
 
