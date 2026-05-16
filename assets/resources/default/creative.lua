@@ -3,6 +3,11 @@ Main.bind_key("rotate_left", "shift+r")
 Main.bind_key("rotate_right", "r")
 Main.bind_key("cancel_selection", "q")
 
+local open_block_menu_label = Main.ui.label("open block menu: " .. Main.get_bind_key("open_item_menu"))
+open_block_menu_label:set_align("right")
+open_block_menu_label:set_position(Vector2.new(1, 0))
+Main.ui.add_child(open_block_menu_label)
+
 selected_item = nil
 
 local block_preview_anchor = Main.ui.node3d("BlockPreviewAnchor")
