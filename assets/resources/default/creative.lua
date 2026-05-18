@@ -12,17 +12,35 @@ selected_item = nil
 
 local block_preview_anchor = Main.ui.node3d("BlockPreviewAnchor")
 block_preview_anchor:hide()
-block_preview_anchor:set_position({ x = 0, y = 0, z = 0 })
-block_preview_anchor:set_rotation_degrees({ x = 0, y = 0, z = 0 })
-block_preview_anchor:set_scale({ x = 1, y = 1, z = 1 })
+block_preview_anchor:set_position(Vector3.new(0, 0, 0))
+block_preview_anchor:set_rotation_degrees(Vector3.new(0, 0, 0))
+block_preview_anchor:set_scale(Vector3.new(1, 1, 1))
 
-local block_menu_window = Main.ui.window("Block selection", true)
+local block_menu_window = Main.ui.modal_window("block_menu", "Block selection", true)
 Main.ui.add_child(block_menu_window)
 local block_menu_tabs = Main.ui.tabs()
 block_menu_window:add_child(block_menu_tabs)
 
+local function toggle_block_menu()
+    local was_visible = block_menu_window:is_visible()
+    block_menu_window:toggle()
+    if was_visible then
+        Main.ui.hide_mouse()
+    else
+        Main.ui.show_mouse()
+    end
+end
+
 local block_hover_template = "[font_size=14][color=#CDCDCD]#%s %s[/color]\n[font_size=10][color=#8B8B8B]Content: %s[/color][/font_size]"
 local current_preview_mesh = nil
+
+local function to_block_position(position)
+    return {
+        x = math.floor(position.x),
+        y = math.floor(position.y),
+        z = math.floor(position.z),
+    }
+end
 
 local block_selection = Main.ui.selection_box("Selection")
 block_selection:hide()
@@ -51,7 +69,7 @@ for _, category in ipairs(Main.blocks.categories()) do
             block_preview_anchor:clear_children()
             block_preview_anchor:show()
             block_preview_anchor:add_child(mesh)
-            block_menu_window:toggle()
+            toggle_block_menu()
         end)
         flow:add_child(icon)
     end
@@ -90,19 +108,24 @@ Main.register_event("look_at_event", function(look_at)
 end)
 
 Main.register_event("player_action_event", function(event)
+    if Main.ui.is_any_modal_active() then
+        return
+    end
+
     if event.hit ~= nil then
         if event.action_type == "main" then
             if selected_item ~= nil then
-                local slug = "place_block"
+                local slug = "modify_block"
                 Main.send_network_event(slug, {
-                    position = event.hit.place_block,
+                    position = to_block_position(event.hit.place_block),
                     new_block_info = selected_item,
                 })
             end
         elseif event.action_type == "second" then
-            local slug = "delete_block"
+            local slug = "modify_block"
             Main.send_network_event(slug, {
-                position = event.hit.selected_block,
+                position = to_block_position(event.hit.selected_block),
+                new_block_info = nil,
             })
         end
     end
@@ -110,7 +133,7 @@ end)
 
 Main.register_event("input_action_pressed_event", function(event)
     if event.action == "open_item_menu" then
-        block_menu_window:toggle()
+        toggle_block_menu()
     elseif event.action == "rotate_left" then
         if selected_item ~= nil then
             selected_item.face = selected_item.face:rotate_left()

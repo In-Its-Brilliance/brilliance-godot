@@ -28,10 +28,11 @@ expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
-[node name="Window" type="WindowUIComponent" node_paths=PackedStringArray("content_holder", "title_component", "close_button")]
+[node name="Window" type="WindowUIComponent" node_paths=PackedStringArray("content_holder", "title_component", "close_button", "body_margin_container")]
 content_holder = NodePath("VBoxContainer/NinePatchRect/MarginContainer/BodyControl")
 title_component = NodePath("VBoxContainer/TitleControl/TitleText")
 close_button = NodePath("VBoxContainer/TitleControl/ButtonClose")
+body_margin_container = NodePath("VBoxContainer/NinePatchRect/MarginContainer")
 anchors_preset = -1
 anchor_left = 0.15
 anchor_top = 0.1

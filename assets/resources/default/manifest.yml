@@ -2,3 +2,4 @@ slug: default
 
 scripts:
  - res://assets/resources/default/creative.lua
+ - res://assets/resources/default/inventory.lua
