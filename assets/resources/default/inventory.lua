@@ -5,7 +5,6 @@ local inventory_dim = Main.ui.color_rect(Main.color(0.0, 0.0, 0.0, 0.12))
 local inventory_panel = Main.ui.control("inventory_panel")
 local inventory_panel_bg = Main.ui.color_rect(Main.color(0.18, 0.18, 0.18, 0.88))
 local inventory_slots_root = Main.ui.grid(8)
-inventory_slots_root:center()
 
 Main.ui.add_child(inventory_root)
 inventory_root:add_child(inventory_dim)
@@ -28,6 +27,8 @@ for index = 1, #inventory:get_slots() do
     local slot_ui = Main.ui.inventory_slot(index - 1)
     inventory_slots_root:add_child(slot_ui)
 end
+
+inventory_slots_root:center()
 
 local function open_inventory()
     inventory_root:show()
