@@ -5,6 +5,7 @@ local inventory_dim = Main.ui.color_rect(Main.color(0.0, 0.0, 0.0, 0.12))
 local inventory_panel = Main.ui.control("inventory_panel")
 local inventory_panel_bg = Main.ui.color_rect(Main.color(0.18, 0.18, 0.18, 0.88))
 local inventory_slots_root = Main.ui.grid(8)
+inventory_slots_root:center()
 
 Main.ui.add_child(inventory_root)
 inventory_root:add_child(inventory_dim)
@@ -23,14 +24,10 @@ if inventory == nil then
     error("inventory not found")
 end
 
-local created_slots = 0
 for index = 1, #inventory:get_slots() do
     local slot_ui = Main.ui.inventory_slot(index - 1)
     inventory_slots_root:add_child(slot_ui)
-    created_slots = created_slots + 1
 end
-inventory_slots_root:center()
-Main.print("inventory slots created: " .. created_slots)
 
 local function open_inventory()
     inventory_root:show()

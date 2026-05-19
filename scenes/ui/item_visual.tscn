@@ -3,6 +3,8 @@
 [ext_resource type="Theme" path="res://assets/gui/default_theme.tres" id="1_56tml"]
 
 [node name="ItemVisual" type="ItemVisual" node_paths=PackedStringArray("icon", "count_label")]
+icon = NodePath("Icon")
+count_label = NodePath("CountLabel")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -20,6 +22,7 @@ grow_vertical = 2
 mouse_filter = 2
 texture_filter = 1
 expand_mode = 2
+z_index = 0
 
 [node name="CountLabel" type="Label" parent="."]
 layout_mode = 1
@@ -36,3 +39,4 @@ theme = ExtResource("1_56tml")
 horizontal_alignment = 2
 vertical_alignment = 2
 text = "0"
+z_index = 1
