@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b205afj08rdbg"]
+[gd_scene format=3 uid="uid://b205afj08rdbg"]
 
 [ext_resource type="Texture2D" uid="uid://csefuukckytn3" path="res://assets/gui/textures/window/window_header_background.png" id="1_lexnp"]
 [ext_resource type="Texture2D" uid="uid://ro1v5ntdanpx" path="res://assets/gui/textures/window/c_header_close-HOVER.png" id="2_8jgfo"]
@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://c0ofhqdrvsax7" path="res://assets/gui/textures/window/window_body_background.png" id="5_0brfh"]
 [ext_resource type="Theme" uid="uid://b02sh2g6s5sq0" path="res://assets/gui/default_theme.tres" id="5_8jgfo"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7xute"]
-texture = ExtResource("2_8jgfo")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2uo0a"]
+texture = ExtResource("4_3o8fx")
 expand_margin_left = 5.0
 expand_margin_top = 5.0
 expand_margin_right = 5.0
@@ -21,18 +21,17 @@ expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2uo0a"]
-texture = ExtResource("4_3o8fx")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7xute"]
+texture = ExtResource("2_8jgfo")
 expand_margin_left = 5.0
 expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
-[node name="Window" type="WindowUIComponent" node_paths=PackedStringArray("content_holder", "title_component", "close_button", "body_margin_container")]
+[node name="Window" type="WindowUIComponent" unique_id=217262645 node_paths=PackedStringArray("content_holder", "title_component", "close_button")]
 content_holder = NodePath("VBoxContainer/NinePatchRect/MarginContainer/BodyControl")
 title_component = NodePath("VBoxContainer/TitleControl/TitleText")
 close_button = NodePath("VBoxContainer/TitleControl/ButtonClose")
-body_margin_container = NodePath("VBoxContainer/NinePatchRect/MarginContainer")
 anchors_preset = -1
 anchor_left = 0.15
 anchor_top = 0.1
@@ -41,7 +40,7 @@ anchor_bottom = 0.85
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1804225616]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,11 +49,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="TitleControl" type="Control" parent="VBoxContainer"]
+[node name="TitleControl" type="Control" parent="VBoxContainer" unique_id=667455262]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/TitleControl"]
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/TitleControl" unique_id=1951580251]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,7 +62,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_lexnp")
 
-[node name="ButtonClose" type="Button" parent="VBoxContainer/TitleControl"]
+[node name="ButtonClose" type="Button" parent="VBoxContainer/TitleControl" unique_id=712904004]
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 1
 anchors_preset = -1
@@ -74,11 +73,11 @@ offset_top = 10.8
 offset_right = -9.59998
 offset_bottom = 35.8
 focus_mode = 0
-theme_override_styles/hover = SubResource("StyleBoxTexture_7xute")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_5d22w")
 theme_override_styles/normal = SubResource("StyleBoxTexture_2uo0a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5d22w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7xute")
 
-[node name="TitleText" type="RichTextLabel" parent="VBoxContainer/TitleControl"]
+[node name="TitleText" type="RichTextLabel" parent="VBoxContainer/TitleControl" unique_id=184021574]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.013
@@ -96,13 +95,14 @@ scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
 
-[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer" unique_id=216566881]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("5_0brfh")
+patch_margin_left = 34
 metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/NinePatchRect"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/NinePatchRect" unique_id=285238364]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -114,5 +114,5 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="BodyControl" type="Control" parent="VBoxContainer/NinePatchRect/MarginContainer"]
+[node name="BodyControl" type="Control" parent="VBoxContainer/NinePatchRect/MarginContainer" unique_id=14586386]
 layout_mode = 2

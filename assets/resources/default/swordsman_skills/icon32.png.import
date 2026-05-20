@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://en4lywcjvw8o"
-path="res://.godot/imported/icon32.png-f30d35df66e8ad956c64c5eaedd164dc.ctex"
+path="res://.godot/imported/icon32.png-6961a6e4536a04eb69590a312d214803.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/resources/default/swordsman_skills/icon32.png"
-dest_files=["res://.godot/imported/icon32.png-f30d35df66e8ad956c64c5eaedd164dc.ctex"]
+dest_files=["res://.godot/imported/icon32.png-6961a6e4536a04eb69590a312d214803.ctex"]
 
 [params]
 

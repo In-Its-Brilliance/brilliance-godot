@@ -68,6 +68,7 @@ LineEdit/fonts/font = ExtResource("1_op4pw")
 LineEdit/styles/focus = SubResource("StyleBoxTexture_hdqgq")
 LineEdit/styles/normal = SubResource("StyleBoxTexture_tsr0i")
 Panel/styles/panel = null
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
 RichTextLabel/fonts/bold_font = ExtResource("2_07edv")
 RichTextLabel/fonts/bold_italics_font = ExtResource("3_2xpso")
 RichTextLabel/fonts/italics_font = ExtResource("4_usuut")
