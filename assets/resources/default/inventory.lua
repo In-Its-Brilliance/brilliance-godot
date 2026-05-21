@@ -1,7 +1,16 @@
 Main.bind_key("toggle_inventory", "tab")
 
+local inventory_shader = Main.ui.create_shader()
+inventory_shader:add_resource("res://assets/shaders/blure.gdshader")
+
+local inventory_material = Main.ui.create_material()
+inventory_material:set_shader(inventory_shader)
+inventory_material:set_shader_parameter("blur_amount", 2.0)
+inventory_material:set_shader_parameter("darken", 0.075)
+
 local inventory_root = Main.ui.modal("inventory")
-local inventory_dim = Main.ui.color_rect(Main.color(0.0, 0.0, 0.0, 0.12))
+local inventory_dim = Main.ui.color_rect(Main.color(0.0, 0.0, 0.0, 0.144))
+inventory_dim:set_material(inventory_material)
 local inventory_panel = Main.ui.panel()
 local inventory_slots_root = Main.ui.grid(8)
 
