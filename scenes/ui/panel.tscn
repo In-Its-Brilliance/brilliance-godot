@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://g8f9u6xk4vpanel"]
+
+[ext_resource type="Texture2D" uid="uid://dhpisvjt7gu38" path="res://assets/gui/textures/window/c_full.png" id="1_cfull"]
+
+[node name="Panel" type="PanelUIComponent" unique_id=1 node_paths=PackedStringArray("content_holder")]
+content_holder = NodePath("NinePatchRect/MarginContainer/BodyControl")
+anchors_preset = -1
+anchor_right = 0.0
+anchor_bottom = 0.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=2]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cfull")
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 15
+patch_margin_bottom = 15
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect" unique_id=3]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="BodyControl" type="MarginContainer" parent="NinePatchRect/MarginContainer" unique_id=4]
+layout_mode = 2

@@ -61,6 +61,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_lexnp")
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 15
+patch_margin_bottom = 15
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 2
 
 [node name="ButtonClose" type="Button" parent="VBoxContainer/TitleControl" unique_id=712904004]
 custom_minimum_size = Vector2(25, 25)
@@ -83,9 +89,10 @@ anchors_preset = -1
 anchor_left = 0.013
 anchor_right = 0.947
 anchor_bottom = 1.0
-offset_left = 2.522
+offset_left = 2.5220003
 offset_top = 4.0
-offset_right = 0.717957
+offset_right = 0.71795654
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_8jgfo")
@@ -99,7 +106,12 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("5_0brfh")
-patch_margin_left = 34
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 15
+patch_margin_bottom = 15
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/NinePatchRect" unique_id=285238364]
@@ -109,10 +121,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
 [node name="BodyControl" type="Control" parent="VBoxContainer/NinePatchRect/MarginContainer" unique_id=14586386]
 layout_mode = 2

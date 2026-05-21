@@ -2,20 +2,15 @@ Main.bind_key("toggle_inventory", "tab")
 
 local inventory_root = Main.ui.modal("inventory")
 local inventory_dim = Main.ui.color_rect(Main.color(0.0, 0.0, 0.0, 0.12))
-local inventory_panel = Main.ui.control("inventory_panel")
-local inventory_panel_bg = Main.ui.color_rect(Main.color(0.18, 0.18, 0.18, 0.88))
+local inventory_panel = Main.ui.panel()
 local inventory_slots_root = Main.ui.grid(8)
 
 Main.ui.add_child(inventory_root)
 inventory_root:add_child(inventory_dim)
 inventory_root:add_child(inventory_panel)
-inventory_panel:add_child(inventory_panel_bg)
 inventory_panel:add_child(inventory_slots_root)
 inventory_root:hide()
 inventory_panel:hide()
-
-inventory_panel:set_size(Main.vec2(0.42, 0.48))
-inventory_panel:center()
 
 local inventory = Main.player.get_inventory()
 
@@ -28,9 +23,8 @@ for index = 1, #inventory:get_slots() do
     inventory_slots_root:add_child(slot_ui)
 end
 
-inventory_slots_root:center()
-
 local function open_inventory()
+    inventory_panel:fit_and_center()
     inventory_root:show()
     inventory_panel:show()
     Main.ui.show_mouse()

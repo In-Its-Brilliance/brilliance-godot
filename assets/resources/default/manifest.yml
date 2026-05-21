@@ -2,6 +2,53 @@ slug: default
 
 media:
  - res://assets/resources/default/swordsman_skills/icon1.png
+ - res://assets/resources/default/swordsman_skills/icon2.png
+ - res://assets/resources/default/swordsman_skills/icon3.png
+ - res://assets/resources/default/swordsman_skills/icon4.png
+ - res://assets/resources/default/swordsman_skills/icon5.png
+ - res://assets/resources/default/swordsman_skills/icon6.png
+ - res://assets/resources/default/swordsman_skills/icon7.png
+ - res://assets/resources/default/swordsman_skills/icon8.png
+ - res://assets/resources/default/swordsman_skills/icon9.png
+ - res://assets/resources/default/swordsman_skills/icon10.png
+ - res://assets/resources/default/swordsman_skills/icon11.png
+ - res://assets/resources/default/swordsman_skills/icon12.png
+ - res://assets/resources/default/swordsman_skills/icon13.png
+ - res://assets/resources/default/swordsman_skills/icon14.png
+ - res://assets/resources/default/swordsman_skills/icon15.png
+ - res://assets/resources/default/swordsman_skills/icon16.png
+ - res://assets/resources/default/swordsman_skills/icon17.png
+ - res://assets/resources/default/swordsman_skills/icon18.png
+ - res://assets/resources/default/swordsman_skills/icon19.png
+ - res://assets/resources/default/swordsman_skills/icon20.png
+ - res://assets/resources/default/swordsman_skills/icon21.png
+ - res://assets/resources/default/swordsman_skills/icon22.png
+ - res://assets/resources/default/swordsman_skills/icon23.png
+ - res://assets/resources/default/swordsman_skills/icon24.png
+ - res://assets/resources/default/swordsman_skills/icon25.png
+ - res://assets/resources/default/swordsman_skills/icon26.png
+ - res://assets/resources/default/swordsman_skills/icon27.png
+ - res://assets/resources/default/swordsman_skills/icon28.png
+ - res://assets/resources/default/swordsman_skills/icon29.png
+ - res://assets/resources/default/swordsman_skills/icon30.png
+ - res://assets/resources/default/swordsman_skills/icon31.png
+ - res://assets/resources/default/swordsman_skills/icon32.png
+ - res://assets/resources/default/swordsman_skills/icon33.png
+ - res://assets/resources/default/swordsman_skills/icon34.png
+ - res://assets/resources/default/swordsman_skills/icon35.png
+ - res://assets/resources/default/swordsman_skills/icon36.png
+ - res://assets/resources/default/swordsman_skills/icon37.png
+ - res://assets/resources/default/swordsman_skills/icon38.png
+ - res://assets/resources/default/swordsman_skills/icon39.png
+ - res://assets/resources/default/swordsman_skills/icon40.png
+ - res://assets/resources/default/swordsman_skills/icon41.png
+ - res://assets/resources/default/swordsman_skills/icon42.png
+ - res://assets/resources/default/swordsman_skills/icon43.png
+ - res://assets/resources/default/swordsman_skills/icon44.png
+ - res://assets/resources/default/swordsman_skills/icon45.png
+ - res://assets/resources/default/swordsman_skills/icon46.png
+ - res://assets/resources/default/swordsman_skills/icon47.png
+ - res://assets/resources/default/swordsman_skills/icon48.png
 
 scripts:
  - res://assets/resources/default/creative.lua

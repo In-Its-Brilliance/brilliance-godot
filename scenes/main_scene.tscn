@@ -9,6 +9,7 @@
 [ext_resource type="Material" uid="uid://b7eyr4blv58kj" path="res://assets/block_selector_material.tres" id="6_18nlu"]
 [ext_resource type="Material" uid="uid://b8tkb2w5kplnu" path="res://assets/skyboxes/sky_material.tres" id="7_sky"]
 [ext_resource type="Texture2D" uid="uid://cufpg8duq452n" path="res://assets/gui/textures/border-thin.png" id="9_c1pb6"]
+[ext_resource type="Texture2D" uid="uid://dhpisvjt7gu38" path="res://assets/gui/textures/window/c_full.png" id="10_6wevv"]
 
 [sub_resource type="Sky" id="Sky_7db6b"]
 sky_material = ExtResource("7_sky")
@@ -85,8 +86,9 @@ mesh = SubResource("PlaneMesh_7ykc4")
 surface_material_override/0 = ExtResource("5_tt6yv")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=756274426]
-offset_right = 252.0
-offset_bottom = 217.0
+visible = false
+offset_right = 274.0
+offset_bottom = 223.0
 texture = ExtResource("9_c1pb6")
 draw_center = false
 region_rect = Rect2(0, 0, 248, 166)
@@ -94,5 +96,18 @@ patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=649217991]
+visible = false
+offset_left = 283.0
+offset_right = 616.0
+offset_bottom = 252.0
+texture = ExtResource("10_6wevv")
+patch_margin_left = 15
+patch_margin_top = 15
+patch_margin_right = 15
+patch_margin_bottom = 15
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
