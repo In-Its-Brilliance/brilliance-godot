@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dhpisvjt7gu38" path="res://assets/gui/textures/window/c_full.png" id="1_cfull"]
 
-[node name="Panel" type="PanelUIComponent" unique_id=1 node_paths=PackedStringArray("content_holder")]
+[node name="Panel" type="PanelUIComponent" unique_id=1 node_paths=PackedStringArray("nine_patch_rect", "margin_container", "content_holder")]
+nine_patch_rect = NodePath("NinePatchRect")
+margin_container = NodePath("NinePatchRect/MarginContainer")
 content_holder = NodePath("NinePatchRect/MarginContainer/BodyControl")
 anchors_preset = -1
 anchor_right = 0.0
