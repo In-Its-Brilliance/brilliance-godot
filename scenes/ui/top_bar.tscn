@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://ctommesgicy61"]
+
+[ext_resource type="Texture2D" uid="uid://brgtr3avw53ft" path="res://assets/gui/textures/bar/bb_bar.png" id="1_xsohi"]
+[ext_resource type="Texture2D" uid="uid://cdy3ukvg07amh" path="res://assets/gui/textures/bar/bb_button_side.png" id="2_kef68"]
+[ext_resource type="PackedScene" uid="uid://by778nvj2cx2m" path="res://scenes/ui/top_bar_button.tscn" id="3_luevy"]
+
+[node name="TopBarComponent" type="TopBarUIComponent" unique_id=235134432 node_paths=PackedStringArray("content_holder", "button_holder")]
+content_holder = NodePath("VBoxContainer/Content")
+button_holder = NodePath("VBoxContainer/TopBar/NinePatchRect/Control/HBoxContainer/HBoxContainer")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=469433256]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TopBar" type="Control" parent="VBoxContainer" unique_id=1424857158]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/TopBar" unique_id=1265040439]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xsohi")
+patch_margin_left = 10
+patch_margin_right = 10
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/TopBar/NinePatchRect" unique_id=69695415]
+layout_mode = 1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TopBar/NinePatchRect/Control" unique_id=1145145413]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TopBar/NinePatchRect/Control/HBoxContainer" unique_id=1253452577]
+custom_minimum_size = Vector2(24, 45)
+layout_mode = 2
+texture = ExtResource("2_kef68")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TopBar/NinePatchRect/Control/HBoxContainer" unique_id=680171498]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Button" parent="VBoxContainer/TopBar/NinePatchRect/Control/HBoxContainer/HBoxContainer" unique_id=1327788286 instance=ExtResource("3_luevy")]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/TopBar/NinePatchRect/Control/HBoxContainer" unique_id=1395754408]
+custom_minimum_size = Vector2(24, 45)
+layout_mode = 2
+texture = ExtResource("2_kef68")
+flip_h = true
+
+[node name="Content" type="Control" parent="VBoxContainer" unique_id=1062836091]
+layout_mode = 2
+size_flags_vertical = 3
