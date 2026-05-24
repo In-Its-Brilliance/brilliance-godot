@@ -49,8 +49,6 @@ if inventory == nil then
 end
 
 for index = 1, #inventory:get_slots() do
-    local slot_ui = Main.ui.inventory_slot(index - 1)
-    inventory_slots_root:add_child(slot_ui)
 end
 
 local function open_inventory()

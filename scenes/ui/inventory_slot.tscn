@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://i8k0g2eyqg6u" path="res://assets/gui/textures/slots/cc_race_class_icon_bg.png" id="1_bg"]
 [ext_resource type="Texture2D" uid="uid://b5udata6g51gn" path="res://assets/gui/textures/slots/cc_race_class_frame-SELECTED.png" id="3_selected"]
 
-[node name="InventorySlot" type="InventorySlot" unique_id=70407813 node_paths=PackedStringArray("background", "hover_overlay", "selected_overlay", "item_visual", "drag_preview", "content_margin")]
+[node name="InventorySlot" type="InventorySlot" unique_id=70407813 node_paths=PackedStringArray("custom_background", "content_margin")]
+custom_background = NodePath("MarginContainer/CustomBackground")
 content_margin = NodePath("MarginContainer")
 custom_minimum_size = Vector2(50, 50)
 anchors_preset = 15
@@ -36,27 +37,25 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
+[node name="CustomBackground" type="TextureRect" parent="MarginContainer" unique_id=210044112]
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 2
+
 [node name="ItemVisual" type="ItemVisual" parent="MarginContainer" unique_id=391261804]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 mouse_filter = 2
 
 [node name="DragPreview" type="ItemVisual" parent="MarginContainer" unique_id=1819274655]
 visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 mouse_filter = 2
 
 [node name="SelectedOverlay" type="TextureRect" parent="." unique_id=1710080335]
 visible = false
+z_index = 2
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
