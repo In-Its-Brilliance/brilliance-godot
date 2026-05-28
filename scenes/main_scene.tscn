@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://8t3qd3k1d8od" path="res://assets/terrain_material.tres" id="5_tt6yv"]
 [ext_resource type="Material" uid="uid://b7eyr4blv58kj" path="res://assets/block_selector_material.tres" id="6_18nlu"]
 [ext_resource type="Material" uid="uid://b8tkb2w5kplnu" path="res://assets/skyboxes/sky_material.tres" id="7_sky"]
+[ext_resource type="PackedScene" uid="uid://bc5is5n6qpul5" path="res://scenes/ui/inventory.tscn" id="9_c1pb6"]
 
 [sub_resource type="Sky" id="Sky_7db6b"]
 sky_material = ExtResource("7_sky")
@@ -75,3 +76,5 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 67.
 visible = false
 mesh = SubResource("PlaneMesh_7ykc4")
 surface_material_override/0 = ExtResource("5_tt6yv")
+
+[node name="Inventory" parent="." unique_id=929608280 instance=ExtResource("9_c1pb6")]

@@ -16,14 +16,16 @@ block_preview_anchor:set_position(Vector3.new(0, 0, 0))
 block_preview_anchor:set_rotation_degrees(Vector3.new(0, 0, 0))
 block_preview_anchor:set_scale(Vector3.new(1, 1, 1))
 
-local block_menu_window = Main.ui.modal_window("block_menu", "Block selection", true)
-Main.ui.add_child(block_menu_window)
+local block_menu_modal = Main.ui.modal("block_menu")
+Main.ui.add_child(block_menu_modal)
+local block_menu_window = Main.ui.window("Block selection", true)
+block_menu_modal:add_child(block_menu_window)
 local block_menu_tabs = Main.ui.tabs()
 block_menu_window:add_child(block_menu_tabs)
 
 local function toggle_block_menu()
-    local was_visible = block_menu_window:is_visible()
-    block_menu_window:toggle()
+    local was_visible = block_menu_modal:is_visible()
+    block_menu_modal:toggle()
     if was_visible then
         Main.ui.hide_mouse()
     else
