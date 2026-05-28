@@ -27,8 +27,10 @@ local function toggle_block_menu()
     local was_visible = block_menu_modal:is_visible()
     block_menu_modal:toggle()
     if was_visible then
+        block_menu_window:hide()
         Main.ui.hide_mouse()
     else
+        block_menu_window:show()
         Main.ui.show_mouse()
     end
 end
