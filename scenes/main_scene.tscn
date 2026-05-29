@@ -51,15 +51,6 @@ script_ui_root = NodePath("UIRoot")
 world_environment = NodePath("WorldEnvironment")
 directional_light = NodePath("DirectionalLight3D")
 
-[node name="ConsoleContainer" parent="." unique_id=552235794 instance=ExtResource("1_6wevv")]
-visible = false
-
-[node name="TextScreen" parent="." unique_id=358954867 instance=ExtResource("2_773ro")]
-visible = false
-
-[node name="DebugInfo" parent="." unique_id=1908370637 instance=ExtResource("3_qwjw3")]
-visible = false
-
 [node name="WorldsManager" type="WorldsManager" parent="." unique_id=1088629680]
 terrain_material = ExtResource("3_gubc5")
 terrain_material_transparent = ExtResource("4_rt2n2")
@@ -89,6 +80,9 @@ visible = false
 mesh = SubResource("PlaneMesh_7ykc4")
 surface_material_override/0 = ExtResource("5_tt6yv")
 
+[node name="DebugInfo" parent="." unique_id=1908370637 instance=ExtResource("3_qwjw3")]
+visible = false
+
 [node name="UIRoot" type="Control" parent="." unique_id=1080838236]
 layout_mode = 3
 anchors_preset = 15
@@ -96,5 +90,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Inventory" parent="." unique_id=929608280 instance=ExtResource("9_c1pb6")]
+mouse_filter = 2
+
+[node name="ConsoleContainer" parent="." unique_id=552235794 instance=ExtResource("1_6wevv")]
+visible = false
+
+[node name="TextScreen" parent="." unique_id=358954867 instance=ExtResource("2_773ro")]
+visible = false

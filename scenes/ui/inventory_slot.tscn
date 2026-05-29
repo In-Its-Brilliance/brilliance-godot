@@ -39,7 +39,6 @@ theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
 [node name="CustomBackground" type="TextureRect" parent="MarginContainer" unique_id=210044112]
-z_index = 1
 texture_filter = 1
 layout_mode = 2
 mouse_filter = 2

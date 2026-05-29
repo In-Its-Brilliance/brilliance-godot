@@ -449,7 +449,7 @@ size_flags_stretch_ratio = 0.2
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.2
+size_flags_stretch_ratio = 0.08
 
 [node name="InventoryHotbar" type="Control" parent="." unique_id=1387555590]
 layout_mode = 1
