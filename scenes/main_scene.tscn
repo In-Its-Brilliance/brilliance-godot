@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c5l1r11gi0tet"]
 
+[ext_resource type="PackedScene" uid="uid://boobsdrukew6t" path="res://scenes/console.tscn" id="1_6wevv"]
 [ext_resource type="PackedScene" uid="uid://ha34myf86so5" path="res://scenes/text_screen.tscn" id="2_773ro"]
 [ext_resource type="Material" uid="uid://bcdnbnaxj02cg" path="res://assets/shader_material_terrain.tres" id="3_gubc5"]
 [ext_resource type="PackedScene" uid="uid://dubrdqpgortj7" path="res://scenes/debug_info.tscn" id="3_qwjw3"]
@@ -41,12 +42,23 @@ adjustment_enabled = true
 [sub_resource type="PlaneMesh" id="PlaneMesh_7ykc4"]
 size = Vector2(400, 400)
 
-[node name="MainScene" type="MainScene" unique_id=1042616537 node_paths=PackedStringArray("worlds_manager", "world_environment", "directional_light")]
+[node name="MainScene" type="MainScene" unique_id=1042616537 node_paths=PackedStringArray("worlds_manager", "console", "text_screen", "debug_info", "script_ui_root", "world_environment", "directional_light")]
 worlds_manager = NodePath("WorldsManager")
-text_screen_scene = ExtResource("2_773ro")
-debug_info_scene = ExtResource("3_qwjw3")
+console = NodePath("ConsoleContainer")
+text_screen = NodePath("TextScreen")
+debug_info = NodePath("DebugInfo")
+script_ui_root = NodePath("UIRoot")
 world_environment = NodePath("WorldEnvironment")
 directional_light = NodePath("DirectionalLight3D")
+
+[node name="ConsoleContainer" parent="." unique_id=552235794 instance=ExtResource("1_6wevv")]
+visible = false
+
+[node name="TextScreen" parent="." unique_id=358954867 instance=ExtResource("2_773ro")]
+visible = false
+
+[node name="DebugInfo" parent="." unique_id=1908370637 instance=ExtResource("3_qwjw3")]
+visible = false
 
 [node name="WorldsManager" type="WorldsManager" parent="." unique_id=1088629680]
 terrain_material = ExtResource("3_gubc5")
@@ -76,5 +88,13 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 67.
 visible = false
 mesh = SubResource("PlaneMesh_7ykc4")
 surface_material_override/0 = ExtResource("5_tt6yv")
+
+[node name="UIRoot" type="Control" parent="." unique_id=1080838236]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Inventory" parent="." unique_id=929608280 instance=ExtResource("9_c1pb6")]
