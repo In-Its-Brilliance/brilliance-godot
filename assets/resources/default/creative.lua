@@ -138,6 +138,10 @@ end)
 Main.register_event("input_action_pressed_event", function(event)
     if event.action == "open_item_menu" then
         toggle_block_menu()
+    elseif event.action == "escape" then
+        if block_menu_modal:is_visible() then
+            toggle_block_menu()
+        end
     elseif event.action == "rotate_left" then
         if selected_item ~= nil then
             selected_item.face = selected_item.face:rotate_left()
