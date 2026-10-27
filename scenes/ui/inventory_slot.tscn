@@ -3,8 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://i8k0g2eyqg6u" path="res://assets/gui/textures/slots/cc_race_class_icon_bg.png" id="1_bg"]
 [ext_resource type="Texture2D" uid="uid://b5udata6g51gn" path="res://assets/gui/textures/slots/cc_race_class_frame-SELECTED.png" id="3_selected"]
 
-[node name="InventorySlot" type="InventorySlot" unique_id=70407813 node_paths=PackedStringArray("custom_background", "content_margin")]
+[node name="InventorySlot" type="InventorySlot" unique_id=70407813 node_paths=PackedStringArray("custom_background", "hover_overlay", "content_margin")]
 custom_background = NodePath("MarginContainer/CustomBackground")
+hover_overlay = NodePath("SelectedOverlay")
 content_margin = NodePath("MarginContainer")
 custom_minimum_size = Vector2(50, 50)
 anchors_preset = 15
