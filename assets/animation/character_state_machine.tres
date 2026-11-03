@@ -3,8 +3,8 @@
 [sub_resource type="AnimationNodeAnimation" id="anim_fall"]
 animation = &"fall"
 
-[sub_resource type="AnimationNodeAnimation" id="anim_idle"]
-animation = &"idle"
+[sub_resource type="AnimationNodeAnimation" id="anim_stand"]
+animation = &"stand"
 
 [sub_resource type="AnimationNodeAnimation" id="anim_jump"]
 animation = &"jump"
@@ -15,58 +15,76 @@ animation = &"run"
 [sub_resource type="AnimationNodeAnimation" id="anim_walk"]
 animation = &"walk"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="t_start_idle"]
+[sub_resource type="AnimationNodeAnimation" id="anim_walkbackwards"]
+animation = &"walkbackwards"
+
+[sub_resource type="AnimationNodeAnimation" id="anim_shuffle_left"]
+animation = &"shuffle_left"
+
+[sub_resource type="AnimationNodeAnimation" id="anim_shuffle_right"]
+animation = &"shuffle_right"
+
+[sub_resource type="AnimationNodeAnimation" id="anim_jump_start"]
+animation = &"jump_start"
+
+[sub_resource type="AnimationNodeAnimation" id="anim_land"]
+animation = &"jump_end"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="locomotion"]
+blend_point_0/node = SubResource("anim_stand")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("anim_walk")
+blend_point_1/pos = 4.0
+blend_point_2/node = SubResource("anim_run")
+blend_point_2/pos = 5.5
+blend_point_3/node = SubResource("anim_walkbackwards")
+blend_point_3/pos = -4.0
+min_space = -5.5
+max_space = 5.5
+value_label = "Speed"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="turn"]
+blend_point_0/node = SubResource("anim_shuffle_left")
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource("anim_stand")
+blend_point_1/pos = 0.0
+blend_point_2/node = SubResource("anim_shuffle_right")
+blend_point_2/pos = 1.0
+value_label = "Turn"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="t_start"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="t_idle_walk"]
-xfade_time = 0.2
-advance_mode = 0
+[sub_resource type="AnimationNodeStateMachineTransition" id="t_takeoff_end"]
+switch_mode = 2
+advance_mode = 2
+xfade_time = 0.05
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="t_idle_run"]
-xfade_time = 0.2
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="t_idle_jump"]
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="t_walk_idle"]
-xfade_time = 0.2
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="t_walk_run"]
-xfade_time = 0.2
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="t_walk_jump"]
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="t_run_idle"]
-xfade_time = 0.2
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="t_run_walk"]
-xfade_time = 0.2
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="t_run_jump"]
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="t_jump_fall"]
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="t_fall_idle"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="t_landing_end"]
+switch_mode = 0
+advance_mode = 2
+advance_condition = &"land_finished"
 xfade_time = 0.15
-advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="t_air"]
+advance_mode = 1
+xfade_time = 0.08
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="t_ground"]
+advance_mode = 1
+xfade_time = 0.15
 
 [resource]
 states/fall/node = SubResource("anim_fall")
-states/fall/position = Vector2(300, 400)
-states/idle/node = SubResource("anim_idle")
-states/idle/position = Vector2(300, 200)
+states/fall/position = Vector2(640, 200)
+states/locomotion/node = SubResource("locomotion")
+states/locomotion/position = Vector2(200, 200)
+states/turn/node = SubResource("turn")
+states/turn/position = Vector2(200, 400)
+states/jump_start/node = SubResource("anim_jump_start")
+states/jump_start/position = Vector2(420, 0)
 states/jump/node = SubResource("anim_jump")
-states/jump/position = Vector2(300, 0)
-states/run/node = SubResource("anim_run")
-states/run/position = Vector2(700, 100)
-states/walk/node = SubResource("anim_walk")
-states/walk/position = Vector2(500, 100)
-transitions = ["Start", "idle", SubResource("t_start_idle"), "idle", "walk", SubResource("t_idle_walk"), "idle", "run", SubResource("t_idle_run"), "idle", "jump", SubResource("t_idle_jump"), "walk", "idle", SubResource("t_walk_idle"), "walk", "run", SubResource("t_walk_run"), "walk", "jump", SubResource("t_walk_jump"), "run", "idle", SubResource("t_run_idle"), "run", "walk", SubResource("t_run_walk"), "run", "jump", SubResource("t_run_jump"), "jump", "fall", SubResource("t_jump_fall"), "fall", "idle", SubResource("t_fall_idle")]
+states/jump/position = Vector2(640, 0)
+states/land/node = SubResource("anim_land")
+states/land/position = Vector2(420, 400)
+transitions = ["Start", "locomotion", SubResource("t_start"), "locomotion", "jump_start", SubResource("t_air"), "locomotion", "jump", SubResource("t_air"), "locomotion", "fall", SubResource("t_air"), "jump_start", "jump", SubResource("t_takeoff_end"), "jump_start", "fall", SubResource("t_air"), "jump_start", "land", SubResource("t_air"), "jump_start", "locomotion", SubResource("t_ground"), "jump", "fall", SubResource("t_air"), "jump", "land", SubResource("t_air"), "jump", "locomotion", SubResource("t_ground"), "fall", "land", SubResource("t_air"), "fall", "locomotion", SubResource("t_ground"), "fall", "jump_start", SubResource("t_air"), "fall", "jump", SubResource("t_air"), "land", "locomotion", SubResource("t_landing_end"), "land", "jump_start", SubResource("t_air"), "land", "jump", SubResource("t_air"), "land", "fall", SubResource("t_air"), "locomotion", "turn", SubResource("t_ground"), "turn", "locomotion", SubResource("t_ground"), "turn", "jump_start", SubResource("t_air"), "turn", "fall", SubResource("t_air")]

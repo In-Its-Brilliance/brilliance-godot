@@ -2,6 +2,8 @@ slug: default
 
 media:
  - res://assets/models/humanmale.glb
+ - res://assets/models/nightelffemale.glb
+ - res://assets/models/gnomemale.glb
  - res://assets/resources/default/swordsman_skills/icon1.png
  - res://assets/resources/default/swordsman_skills/icon2.png
  - res://assets/resources/default/swordsman_skills/icon3.png

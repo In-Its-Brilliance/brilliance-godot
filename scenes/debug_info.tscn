@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dubrdqpgortj7"]
 
 [ext_resource type="PackedScene" uid="uid://bohec0klc40x2" path="res://scenes/debug_row.tscn" id="1_0e4su"]
+[ext_resource type="Theme" path="res://assets/gui/debug_theme.tres" id="2_theme"]
 
 [node name="DebugInfo" type="DebugInfo" unique_id=1908370637]
+theme = ExtResource("2_theme")
 offset_right = 372.0
 offset_bottom = 96.0
 mouse_filter = 2

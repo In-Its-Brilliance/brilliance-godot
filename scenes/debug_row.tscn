@@ -1,10 +1,5 @@
 [gd_scene format=3 uid="uid://bohec0klc40x2"]
 
-[ext_resource type="FontFile" uid="uid://vrwsx0k32eym" path="res://assets/gui/fonts/Monocraft/Monocraft.otf" id="1_mc55t"]
-[ext_resource type="FontFile" uid="uid://dex64ol46xo2a" path="res://assets/gui/fonts/Monocraft/Monocraft-Bold.otf" id="2_ga4p3"]
-[ext_resource type="FontFile" uid="uid://t0pxs7ig3xsp" path="res://assets/gui/fonts/Monocraft/Monocraft-Bold-Italic.otf" id="3_mkej4"]
-[ext_resource type="FontFile" uid="uid://dldpnw7khwbnk" path="res://assets/gui/fonts/Monocraft/Monocraft-Italic.otf" id="4_b7p2g"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc55t"]
 bg_color = Color(0, 0, 0, 0.4509804)
 
@@ -27,23 +22,16 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer" unique_id=1707778842]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1707778842]
 custom_minimum_size = Vector2(360, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_filter = 2
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("1_mc55t")
-theme_override_fonts/bold_font = ExtResource("2_ga4p3")
-theme_override_fonts/bold_italics_font = ExtResource("3_mkej4")
-theme_override_fonts/italics_font = ExtResource("4_b7p2g")
-theme_override_fonts/mono_font = ExtResource("1_mc55t")
-theme_override_font_sizes/normal_font_size = 12
-theme_override_font_sizes/bold_font_size = 12
-theme_override_font_sizes/bold_italics_font_size = 12
-theme_override_font_sizes/italics_font_size = 12
-theme_override_font_sizes/mono_font_size = 12
 bbcode_enabled = true
 text = "[b]FPS: [color=#66B366]{:.0}[/color][/b]
 [b]Currently rendering:[/b]

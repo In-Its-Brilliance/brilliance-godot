@@ -46,7 +46,8 @@ local function to_block_position(position)
     }
 end
 
-local block_selection = Main.ui.selection_box("Selection")
+local block_selection = Main.ui.create_box_mesh("Selection")
+block_selection:set_material_override(Main.ui.load_material("res://assets/block_selector_material.tres"))
 block_selection:hide()
 block_selection:set_position(Vector3.new(0, 0, 0))
 block_selection:set_rotation_degrees(Vector3.new(0, 0, 0))

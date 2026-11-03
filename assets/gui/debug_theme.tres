@@ -1,0 +1,21 @@
+[gd_resource type="Theme" format=3]
+
+[ext_resource type="FontFile" path="res://assets/gui/fonts/Monocraft/Monocraft.otf" id="1_regular"]
+[ext_resource type="FontFile" path="res://assets/gui/fonts/Monocraft/Monocraft-Bold.otf" id="2_bold"]
+[ext_resource type="FontFile" path="res://assets/gui/fonts/Monocraft/Monocraft-Bold-Italic.otf" id="3_bold_italic"]
+[ext_resource type="FontFile" path="res://assets/gui/fonts/Monocraft/Monocraft-Italic.otf" id="4_italic"]
+
+[resource]
+default_font = ExtResource("1_regular")
+default_font_size = 12
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 2
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/outline_size = 2
+RichTextLabel/fonts/normal_font = ExtResource("1_regular")
+RichTextLabel/fonts/bold_font = ExtResource("2_bold")
+RichTextLabel/fonts/bold_italics_font = ExtResource("3_bold_italic")
+RichTextLabel/fonts/italics_font = ExtResource("4_italic")
+RichTextLabel/fonts/mono_font = ExtResource("1_regular")
