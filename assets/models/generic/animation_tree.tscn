@@ -8,10 +8,10 @@
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4kg3s"]
-advance_mode = 2
+advance_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t81yq"]
-advance_mode = 2
+advance_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_a7few"]
 states/Start/position = Vector2(213, 100)
